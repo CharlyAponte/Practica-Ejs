@@ -1,12 +1,14 @@
 const controllers = {
-  detalle: (req, res) => {
-    (menu = {
-      id: 1,
-      nombre: "Carpaccio fresco",
-      descripcion: "Entrada Carpaccio de salmón con cítricos",
-      precio: "U$S 65.50",
-      imagen: "/images/Carpaccio-de-salmon.jpg",
-    }),
+  menu: (req, res) => {
+    const idMenu = req.params.id;
+    let menu = [
+      {
+        id: 1,
+        nombre: "Carpaccio fresco",
+        descripcion: "Entrada Carpaccio de salmón con cítricos",
+        precio: "U$S 65.50",
+        imagen: "/images/Carpaccio-de-salmon.jpg",
+      },
       {
         id: 2,
         nombre: "Risotto de berenjena",
@@ -28,9 +30,9 @@ const controllers = {
           "Espárragos blancos con vinagreta de verduras y jamón ibérico",
         precio: "U$S 37.50",
         imagen: "/images/Carpaccio-de-salmon.jpg",
-      };
+      },
+    ];
     res.render(req.params.id);
   },
 };
-
 module.exports = controllers;
